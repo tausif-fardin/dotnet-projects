@@ -1,0 +1,27 @@
+﻿@model List<StudentEF.Models.Database.Person>
+@{
+    ViewBag.Title = "DiscountList";
+}
+
+<h2>DiscountList</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Cgpa</th>
+
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <th>@p.Id</th>
+            <th>@p.Name</th>
+            <th>@p.Dob</th>
+            <th>@p.Cgpa</th>
+
+        </tr>
+    }
+
+</table>

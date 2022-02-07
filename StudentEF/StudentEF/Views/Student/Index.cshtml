@@ -1,0 +1,32 @@
+﻿@model List<StudentEF.Models.Database.Person>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>
+    <input type="button" class="btn btn-info" value="Scholarships!" onclick="location.href='@Url.Action("ScholarshipList", "Student")'" />
+    <input type="button" class="btn btn-info" value="Discounts!" onclick="location.href='@Url.Action("DiscountList", "Student")'" />
+</div>
+
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Cgpa</th>
+
+        </tr>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <th>@p.Id</th>
+                <th>@p.Name</th>
+                <th>@p.Dob</th>
+                <th>@p.Cgpa</th>
+            </tr>
+        }
+
+    </table>
+</div>
