@@ -1,4 +1,4 @@
-﻿@model EF.Models.Database.Book
+﻿@model List<EF.Models.Database.Book>
 @{
     ViewBag.Title = "Index";
 }
@@ -10,16 +10,20 @@
         <th>Name</th>
         <th>Author</th>
         <th>Price</th>
-
+        <th></th>
+        <th></th>
     </tr>
-    @foreach(var b in Model)
-            {
+    @foreach (var b in Model)
+    {
 <tr>
-    <th>@b.Id</th>
-    <th>@b.Name</th>
-    <th>@b.Author</th>
-    <th>@b.Price</th>
+    <td><a href="/Book/Edit/@b.Id">@b.Id</a></td>
+    <td>@b.Name</td>
+    <td>@b.Auth</td>
+    <td>@b.Price</td>
+    <td><a class="btn btn-info" href="/Book/Edit/@b.Id">Edit</a></td>
+    <td><a class="btn btn-danger" href="/Book/Edit/@b.Id">Edit</a></td>
+
 
 </tr>
-            }
+    }
 </table>

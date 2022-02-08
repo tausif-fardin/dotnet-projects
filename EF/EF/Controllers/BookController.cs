@@ -34,5 +34,29 @@ namespace EF.Controllers
             }
             return View();
         }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            SP2bEntities1 db = new SP2bEntities1();
+            var book = (from b in db.Books 
+                       where b.Id == id 
+                       select b).FirstOrDefault(); //Only select a single object
+            return View(book);
+        }
+        [HttpPost]
+        public ActionResult Edit(Book sub_b)
+        {
+            SP2bEntities1 db = new SP2bEntities1();
+            var book = (from a in db.Books
+                        where a.Id == sub_b.Id
+                        select a).FirstOrDefault();
+            //book.Auth = sub_b.Auth;
+            //book.Name = sub_b.Name;
+            //book.Price = sub_b.Price;
+
+            db.Entry(book).CurrentValues.SetValues(sub_b);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

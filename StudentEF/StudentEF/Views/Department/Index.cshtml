@@ -1,0 +1,29 @@
+﻿
+@model List<StudentEF.Models.Database.Department>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Department Name</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <th> <a href="/Student/Edit/@p.Deptid">@p.Deptid</a></th>
+                <th>@p.DeptName</th>
+
+                <td><a class="btn btn-info" href="/Department/Edit/@p.Deptid">Edit</a></td>
+                <td><a class="btn btn-danger" href="/Department/Delete/@p.Deptid">Delete</a></td>
+            </tr>
+        }
+
+    </table>
+</div>

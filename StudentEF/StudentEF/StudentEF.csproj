@@ -128,28 +128,29 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Database\Person.cs">
-      <DependentUpon>StudentDB.tt</DependentUpon>
+    <Compile Include="Models\Database\Department.cs">
+      <DependentUpon>DepartmentDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Database\StudentDB.Context.cs">
+    <Compile Include="Models\Database\DepartmentDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StudentDB.Context.tt</DependentUpon>
+      <DependentUpon>DepartmentDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Database\StudentDB.cs">
+    <Compile Include="Models\Database\DepartmentDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StudentDB.tt</DependentUpon>
+      <DependentUpon>DepartmentDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Database\StudentDB.Designer.cs">
+    <Compile Include="Models\Database\DepartmentDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StudentDB.edmx</DependentUpon>
+      <DependentUpon>DepartmentDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -162,24 +163,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Database\StudentDB.Context.tt">
+    <Content Include="Models\Database\DepartmentDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StudentDB.edmx</DependentUpon>
-      <LastGenOutput>StudentDB.Context.cs</LastGenOutput>
+      <DependentUpon>DepartmentDB.edmx</DependentUpon>
+      <LastGenOutput>DepartmentDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Database\StudentDB.tt">
+    <Content Include="Models\Database\DepartmentDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StudentDB.edmx</DependentUpon>
-      <LastGenOutput>StudentDB.cs</LastGenOutput>
+      <DependentUpon>DepartmentDB.edmx</DependentUpon>
+      <LastGenOutput>DepartmentDB.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Database\StudentDB.edmx">
+    <EntityDeploy Include="Models\Database\DepartmentDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>StudentDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>DepartmentDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Database\StudentDB.edmx.diagram">
-      <DependentUpon>StudentDB.edmx</DependentUpon>
+    <Content Include="Models\Database\DepartmentDB.edmx.diagram">
+      <DependentUpon>DepartmentDB.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -210,6 +211,13 @@
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\ScholarshipList.cshtml" />
     <Content Include="Views\Student\DiscountList.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\Delete.cshtml" />
+    <Content Include="Views\Student\DeleteIndex.cshtml" />
+    <Content Include="Views\Department\Create.cshtml" />
+    <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\Department\Edit.cshtml" />
+    <Content Include="Views\Department\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

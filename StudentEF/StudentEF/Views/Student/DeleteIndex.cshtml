@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "DeleteIndex";
+}
+
+<h2>DeleteIndex</h2>
+<h3>Are you sure you want to delete this?</h3>
+
+
+<form action="/Student/Delete" method="post">
+    <input type="text" name="Name" value="@Model.Name" class="form-control" placeholder="Name" />
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="datetime" name="Dob" value="@Model.Dob" class="form-control" placeholder="DOB" />
+    <input type="text" name="Cgpa" value="@Model.Cgpa" class="form-control" placeholder="Cgpa" />
+    <input type="submit" value="Delete" />
+
+</form>

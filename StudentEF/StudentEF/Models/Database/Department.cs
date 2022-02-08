@@ -12,11 +12,9 @@ namespace StudentEF.Models.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class Person
+    public partial class Department
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public System.DateTime Dob { get; set; }
-        public double Cgpa { get; set; }
+        public int Deptid { get; set; }
+        public string DeptName { get; set; }
     }
 }

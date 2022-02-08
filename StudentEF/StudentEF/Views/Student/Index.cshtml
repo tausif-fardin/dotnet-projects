@@ -16,16 +16,20 @@
             <th>Name</th>
             <th>DOB</th>
             <th>Cgpa</th>
-
+            <th></th>
+            <th></th>
         </tr>
         @foreach (var p in Model)
         {
-            <tr>
-                <th>@p.Id</th>
-                <th>@p.Name</th>
-                <th>@p.Dob</th>
-                <th>@p.Cgpa</th>
-            </tr>
+    <tr>
+        <th> <a href="/Student/Edit/@p.Id">@p.Id</a></th>
+        <th>@p.Name</th>
+        <th>@p.Dob</th>
+        <th>@p.Cgpa</th>
+
+        <td><a class="btn btn-info" href="/Student/Edit/@p.Id">Edit</a></td>
+        <td><a class="btn btn-danger" href="/Student/Delete/@p.Id">Delete</a></td>
+    </tr>
         }
 
     </table>

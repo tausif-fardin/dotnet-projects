@@ -49,7 +49,52 @@ namespace StudentEF.Controllers
             var DUsers = db.Persons.Where(e => e.Dob != null && e.Dob <= min);
             return View(DUsers.ToList());
         }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            StudentEntities1 db = new StudentEntities1();
+            var student = (from s in db.Persons
+                     where s.Id == id
+                     select s).FirstOrDefault();
+            return View(student);
 
+        }
+        [HttpPost]
+        public ActionResult Edit(Person sub_s)
+        {
+            StudentEntities1 db = new StudentEntities1();
+            var student = (from s in db.Persons
+                           where s.Id == sub_s.Id
+                           select s).FirstOrDefault();
+            db.Entry(student).CurrentValues.SetValues(sub_s);
+            db.SaveChanges();
 
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            StudentEntities1 db = new StudentEntities1();
+            var student = (from s in db.Persons
+                           where s.Id == id
+                           select s).FirstOrDefault();
+            return View(student);
+
+        }
+        [HttpPost]
+        public ActionResult Delete(Person sub_s)
+        {
+            StudentEntities1 db = new StudentEntities1();
+            var student = (from s in db.Persons
+                           where s.Id == sub_s.Id
+                           select s).FirstOrDefault();
+            db.Persons.Remove(student);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult DeleteIndex()
+        {
+            return View();
+        }
     }
 }

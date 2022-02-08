@@ -13,10 +13,10 @@ namespace StudentEF.Models.Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StudentEntities1 : DbContext
+    public partial class DepartmentEntities : DbContext
     {
-        public StudentEntities1()
-            : base("name=StudentEntities1")
+        public DepartmentEntities()
+            : base("name=DepartmentEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace StudentEF.Models.Database
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Person> Persons { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
     }
 }
