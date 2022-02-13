@@ -4,4 +4,13 @@
 }
 
 <h2>Delete</h2>
+<h3>Are you sure you want to delete this?</h3>
 
+
+<form action="/Student/Delete" method="post">
+    <input type="text" name="Name" value="@Model.DeptName" class="form-control" placeholder="Name" />
+    <input type="submit" class="btn btn-danger" value="Delete" />
+
+</form>
+
+<td><a class="btn btn-info" href="/Department/Index/@Model.DeptId">Back</a></td>

@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "ViewCart";
+}
+
+<h2>ViewCart</h2>
+<body>
+
+    <h3>Cart Page</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        @foreach (Item item in (List<Item>)Session["cart"])
+        {
+            <tr>
+                <td><a href="@Url.Action("Remove", "Cart", new { id = item.Product.Id })">Remove</a></td>
+                <td>@item.Product.Id</td>
+                <td>@item.Product.Name</td>              
+                <td>@item.Product.Price</td>
+                <td>@item.Quantity</td>
+            </tr>
+        }
+        <tr>
+            <td align="right" colspan="6">Sum</td>
+            <td>
+                @{
+                    List<Item> cart = (List<Item>)Session["cart"];
+                    var total = cart.Sum(item => item.Product.Price * item.Quantity);
+                }
+                @total
+            </td>
+        </tr>
+    </table>
+    <br>
+    <a href="@Url.Action("Index", "Product")">Continue Shopping</a>
+
+</body>
+</html>

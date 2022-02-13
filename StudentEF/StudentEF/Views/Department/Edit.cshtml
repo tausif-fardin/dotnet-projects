@@ -5,3 +5,9 @@
 
 <h2>Edit</h2>
 
+<form action="/Student/Edit" method="post">
+    <input type="text" name="Name" value="@Model.DeptName" class="form-control" placeholder="Name" />
+    <input type="hidden" name="Id" value="@Model.DeptId" />
+    <input type="submit" value="Edit" />
+
+</form>

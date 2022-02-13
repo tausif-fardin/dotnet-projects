@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Total" Type="Double" Nullable="false" />
+    <NavigationProperty Name="CartItems" Relationship="Self.FK__CartItem__OrderI__2E1BDC42" FromRole="OrderItem" ToRole="CartItem" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <NavigationProperty Name="CartItems" Relationship="Self.FK__CartItem__Produc__2D27B809" FromRole="Products" ToRole="CartItem" />
+  </EntityType>
+  <EntityType Name="CartItem">
+    <Key>
+      <PropertyRef Name="Quantity" />
+    </Key>
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="OrderId" Type="Int32" />
+    <NavigationProperty Name="OrderItem" Relationship="Self.FK__CartItem__OrderI__2E1BDC42" FromRole="CartItem" ToRole="OrderItem" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__CartItem__Produc__2D27B809" FromRole="CartItem" ToRole="Products" />
+  </EntityType>
+  <Association Name="FK__CartItem__OrderI__2E1BDC42">
+    <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="0..1" />
+    <End Role="CartItem" Type="Self.CartItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderItem">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="CartItem">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CartItem__Produc__2D27B809">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="CartItem" Type="Self.CartItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="CartItem">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProductEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="OrderItems" EntityType="Self.OrderItem" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="CartItems" EntityType="Self.CartItem" />
+    <AssociationSet Name="FK__CartItem__OrderI__2E1BDC42" Association="Self.FK__CartItem__OrderI__2E1BDC42">
+      <End Role="OrderItem" EntitySet="OrderItems" />
+      <End Role="CartItem" EntitySet="CartItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CartItem__Produc__2D27B809" Association="Self.FK__CartItem__Produc__2D27B809">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="CartItem" EntitySet="CartItems" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
