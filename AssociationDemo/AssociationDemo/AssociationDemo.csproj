@@ -141,6 +141,8 @@
     <Compile Include="Models\Database\Department.cs">
       <DependentUpon>UMSDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Database\Entity\CourseModel.cs" />
+    <Compile Include="Models\Database\Entity\DepartmentCourseModel.cs" />
     <Compile Include="Models\Database\Entity\DepartmentModel.cs" />
     <Compile Include="Models\Database\Entity\DepartmentStudentModel.cs" />
     <Compile Include="Models\Database\Entity\StudentModel.cs" />
