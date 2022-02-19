@@ -81,3 +81,5 @@ E:\Code\DotNet\AssociationDemo\AssociationDemo\obj\Debug\AssociationDemo.csproj.
 E:\Code\DotNet\AssociationDemo\AssociationDemo\obj\Debug\AssociationDemo.csproj.CopyComplete
 E:\Code\DotNet\AssociationDemo\AssociationDemo\obj\Debug\AssociationDemo.dll
 E:\Code\DotNet\AssociationDemo\AssociationDemo\obj\Debug\AssociationDemo.pdb
+E:\Code\DotNet\AssociationDemo\AssociationDemo\bin\AutoMapper.dll
+E:\Code\DotNet\AssociationDemo\AssociationDemo\bin\AutoMapper.xml

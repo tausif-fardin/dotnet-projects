@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AssociationDemo.Models.Database;
+using AssociationDemo.Models.Database.Entity;
+using AutoMapper;
 
 namespace AssociationDemo.Controllers
 {
@@ -16,8 +18,12 @@ namespace AssociationDemo.Controllers
                        where d.Id == 1
                        select d).FirstOrDefault();
 
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Department, DepartmentModel>());
+            var mapper = new Mapper(config);
+            var deptModel = mapper.Map<DepartmentModel>(dept);
             var courses = dept.Courses.ToList();
             var students = dept.Students.ToList();
+
 
             return View();
         }
