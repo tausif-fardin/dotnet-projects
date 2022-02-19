@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6ef52c62-8452-4b73-929d-06e4ef657899": {
+      "ProjectGuid": "6ef52c62-8452-4b73-929d-06e4ef657899",
+      "DisplayName": "ContosoReceipeAPI",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
