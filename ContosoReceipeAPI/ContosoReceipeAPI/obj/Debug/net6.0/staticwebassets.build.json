@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "CSp/PFaCpmKWaK4YUXhkm9KPAj9F1cZ3IIbMzNbegTE=",
+  "Source": "ContosoReceipeAPI",
+  "BasePath": "_content/ContosoReceipeAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
