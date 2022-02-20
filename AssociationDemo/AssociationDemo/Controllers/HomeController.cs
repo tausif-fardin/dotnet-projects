@@ -51,6 +51,7 @@ namespace AssociationDemo.Controllers
                 if (data!=null)
                 {
                     FormsAuthentication.SetAuthCookie(data.Username, false);
+                    //FormsAuthentication.SignOut(); for logout
                     return RedirectToAction("Dashboard");
 
                 }
