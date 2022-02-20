@@ -150,6 +150,7 @@
     <Compile Include="Models\Database\Entity\DepartmentStudentModel.cs" />
     <Compile Include="Models\Database\Entity\StudentCourseModel.cs" />
     <Compile Include="Models\Database\Entity\StudentModel.cs" />
+    <Compile Include="Models\Database\Entity\UserModel.cs" />
     <Compile Include="Models\Database\Student.cs">
       <DependentUpon>UMSDB.tt</DependentUpon>
     </Compile>
@@ -167,6 +168,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UMSDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Database\User.cs">
+      <DependentUpon>UMSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -223,6 +227,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

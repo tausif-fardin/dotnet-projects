@@ -31,6 +31,15 @@
     <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
     <Property Name="DepartmentId" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <Association Name="FK_Courses_Departments1">
     <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
     <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
@@ -72,6 +81,7 @@
     <EntitySet Name="CourseStudents" EntityType="Self.CourseStudents" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Courses_Departments1" Association="Self.FK_Courses_Departments1">
       <End Role="Departments" EntitySet="Departments" />
       <End Role="Courses" EntitySet="Courses" />
