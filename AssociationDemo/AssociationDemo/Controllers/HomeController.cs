@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using AssociationDemo.Auth;
 using AssociationDemo.Models.Database;
 using AssociationDemo.Models.Database.Entity;
 using AutoMapper;
@@ -51,6 +52,7 @@ namespace AssociationDemo.Controllers
                 if (data!=null)
                 {
                     FormsAuthentication.SetAuthCookie(data.Username, false);
+                    Session["UserType"] = data.Role;
                     //FormsAuthentication.SignOut(); for logout
                     return RedirectToAction("Dashboard");
 
@@ -78,6 +80,21 @@ namespace AssociationDemo.Controllers
             Mapper mapper = new Mapper(config);
             var data = mapper.Map<List<DepartmentModel>>(deptDb);
 
+            return View(data);
+        }
+        [AdminAccess]
+        public ActionResult AllUsers()
+        {
+            UMSEntities1 db = new UMSEntities1();
+            var config = new MapperConfiguration(
+                cfg =>
+                {
+                    cfg.CreateMap<User, UserModel>();
+                }
+                );
+            var deptDb = db.Users.ToList();
+            Mapper mapper = new Mapper(config);
+            var data = mapper.Map<List<UserModel>>(deptDb);
             return View(data);
         }
         public ActionResult About()
